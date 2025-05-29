@@ -1,0 +1,66 @@
+$(function() {
+    // Handler untuk federation
+    $('.addBtn.federation').on('click', function() {
+        $('#modalTitle').html('Tambah Data');
+        $('.modal-footer button[type=submit]').html('Tambah Data');
+        $('.modal-body form').attr('action', 'http://localhost/serikathub/public/Federation/addFederation');
+        // Kosongkan form
+        $('#nama, #alamat, #no_pencatatan, #keterangan, #kota_id').val('');
+    });
+
+    $('.showEditModal.federation').on('click', function() {
+        $('#modalTitle').html('Edit Data');
+        $('.modal-footer button[type=submit]').html('Edit Data');
+        $('.modal-body form').attr('action', 'http://localhost/serikathub/public/Federation/editFederation');
+
+        const id = $(this).data('id');
+        
+        $.ajax({
+            url: 'http://localhost/serikathub/public/Federation/getedit',
+            data: {id : id}, 
+            method: 'post',
+            dataType: 'json',
+            success: function(data) {
+                $('#nama').val(data.nama);
+                $('#alamat').val(data.alamat);
+                $('#no_pencatatan').val(data.no_pencatatan);
+                $('#keterangan').val(data.keterangan);
+                $('#kota_id').val(data.kota_id);
+                $('#id').val(data.id);
+            }
+        });
+    });
+
+    // Handler untuk federationLeader
+    $('.addBtn.fed-leader').on('click', function() {
+        $('#modalTitle').html('Tambah Data');
+        $('.modal-footer button[type=submit]').html('Tambah Data');
+        $('.modal-body form').attr('action', 'http://localhost/serikathub/public/FederationLeader/addFederationLeader');
+        // Kosongkan form
+        $('#nama, #jabatan, #no_telp').val('');
+    });
+
+    $('.showEditModal.fed-leader').on('click', function() {
+        $('#modalTitle').html('Edit Data');
+        $('.modal-footer button[type=submit]').html('Edit Data');
+        $('.modal-body form').attr('action', 'http://localhost/serikathub/public/FederationLeader/editFederationLeader');
+
+        const id = $(this).data('id');
+        
+        $.ajax({
+            url: 'http://localhost/serikathub/public/FederationLeader/getedit',
+            data: {id: id}, 
+            method: 'post',
+            dataType: 'json',
+            success: function(data) {
+                $('#nama').val(data.pk_nama || data.nama);
+                $('#jabatan').val(data.pk_jabatan || data.jabatan);
+                $('#no_telp').val(data.pk_no_telp || data.no_telp);
+                $('#id').val(data.pk_id || data.id);
+            },
+            error: function(xhr, status, error) {
+                console.error("Error AJAX:", status, error);
+            }
+        });
+    });
+});
