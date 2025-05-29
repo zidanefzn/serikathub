@@ -4,6 +4,8 @@ class Spsb extends Controller {
     public function index() {
         $data['judul'] = 'Daftar SP/SB Perusahaan';
         $data['spsb'] = $this->model('SpsbModel')->getAllSpsb();
+        $data['fed'] = $this->model('FederationModel')->getAllFederation();
+        $data['confed'] = $this->model('ConfederationModel')->getAllConfederation();
         $data['city'] = $this->model('CityModel')->getAllCity();
         $this->view('templates/header', $data);
         $this->view('spsb/index', $data);

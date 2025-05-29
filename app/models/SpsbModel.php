@@ -54,6 +54,24 @@ class SpsbModel {
         $this->db->bind('keterangan', $data['keterangan']);
         $this->db->bind('kota_id', $data['kota_id']);
 
+        if (empty($data['federasi_id'])) {
+            $this->db->bind('federasi_id', null);
+        } else {
+            $this->db->bind('federasi_id', $data['federasi_id']);
+        }
+
+        if (empty($data['konfederasi_id'])) {
+            $this->db->bind('konfederasi_id', null);
+        } else {
+            $this->db->bind('konfederasi_id', $data['konfederasi_id']);
+        }
+
+        if (empty($data['jumlah_anggota'])) {
+            $this->db->bind('jumlah_anggota', null);
+        } else {
+            $this->db->bind('jumlah_anggota', $data['jumlah_anggota']);
+        }
+
         $this->db->execute();
 
         return $this->db->rowCount();

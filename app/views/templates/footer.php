@@ -27,9 +27,8 @@
 
     <script src="<?= BASEURL ?>/js/main.js"></script>
     <script src="<?= BASEURL ?>/js/datatables.js"></script>
-    <script src="<?= BASEURL ?>/js/select2.js"></script>
-    <script src="<?= BASEURL ?>/js/select2City.js"></script>
     <script src="<?= BASEURL ?>/js/confedModalHandler.js"></script>
     <script src="<?= BASEURL ?>/js/fedModalHandler.js"></script>
+    <script src="<?= BASEURL ?>/js/spsbModalHandler.js"></script>
 </body>
 </html>

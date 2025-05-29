@@ -81,6 +81,32 @@
                                         <input type="text" class="form-control" id="no_pencatatan" name="no_pencatatan">
                                     </div>
                                     <div class="form-group mb-4">
+                                        <label for="federasi_id" class="mb-1">Afiliasi Federasi</label>
+                                        <select style="width:100%" class="form-select js-example-basic-single federasi" id="federasi_id" name="federasi_id">
+                                            <option value="">Pilih Federasi</option>
+                                            <?php foreach ($data['fed'] as $fed) : ?>
+                                                <option value="<?= $fed['id']; ?>" <?= ($fed['id'] == $fed['id']) ? 'selected' : ''; ?>>
+                                                    <?= $fed['nama']; ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="konfederasi_id" class="mb-1">Afiliasi Konfederasi</label>
+                                        <select style="width:100%" class="form-select js-example-basic-single konfederasi" id="konfederasi_id" name="konfederasi_id">
+                                            <option value="">Pilih Konfederasi</option>
+                                            <?php foreach ($data['confed'] as $confed) : ?>
+                                                <option value="<?= $confed['id']; ?>" <?= ($confed['id'] == $confed['id']) ? 'selected' : ''; ?>>
+                                                    <?= $confed['nama']; ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="jumlah_anggota" class="mb-1">Jumlah Anggota</label>
+                                        <input type="number" class="form-control" id="jumlah_anggota" name="jumlah_anggota">
+                                    </div>
+                                    <div class="form-group mb-4">
                                         <label for="keterangan" class="mb-1">Keterangan</label>
                                         <textarea class="form-control" id="keterangan" name="keterangan" style="height: 100px;"></textarea>
                                     </div>
