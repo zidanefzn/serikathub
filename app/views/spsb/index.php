@@ -44,8 +44,8 @@
                                 <td><?= $spsb['nama']; ?></td>
                                 <td><?= $spsb['alamat']; ?></td>
                                 <td><?= $spsb['no_pencatatan']; ?></td>
-                                <td><?= $spsb['konfederasi_nama']; ?></td>
                                 <td><?= $spsb['federasi_nama']; ?></td>
+                                <td><?= $spsb['konfederasi_nama']; ?></td>
                                 <td class="text-center"><?= $spsb['jumlah_anggota']; ?></td>
                                 <td><a href="<?= BASEURL; ?>/SpsbLeader/SpsbLeader/<?= $spsb['id']; ?>" class="btn btn-outline-secondary btn-sm">Detail</a></td>
                                 <td><?= $spsb['keterangan']; ?></td>
