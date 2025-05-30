@@ -1,5 +1,5 @@
 $(function() {
-    // Handler untuk Confederation
+    // Handler untuk Spsb
     $('.addBtn.spsb').on('click', function() {
         $('#modalTitle').html('Tambah Data');
         $('.modal-footer button[type=submit]').html('Tambah Data');
@@ -16,7 +16,7 @@ $(function() {
         const id = $(this).data('id');
         
         $.ajax({
-            url: 'http://localhost/serikathub/public/Confederation/getedit',
+            url: 'http://localhost/serikathub/public/Spsb/getedit',
             data: {id : id}, 
             method: 'post',
             dataType: 'json',
@@ -34,11 +34,11 @@ $(function() {
         });
     });
 
-    // Handler untuk ConfederationLeader
-    $('.addBtn.leader').on('click', function() {
+    // Handler untuk SpsbLeader
+    $('.addBtn.spsb-leader').on('click', function() {
         $('#modalTitle').html('Tambah Data');
         $('.modal-footer button[type=submit]').html('Tambah Data');
-        $('.modal-body form').attr('action', 'http://localhost/serikathub/public/ConfederationLeader/addConfederationLeader');
+        $('.modal-body form').attr('action', 'http://localhost/serikathub/public/SpsbLeader/addSpsbLeader');
         // Kosongkan form
         $('#nama, #jabatan, #no_telp').val('');
     });
@@ -46,12 +46,12 @@ $(function() {
     $('.showEditModal.leader').on('click', function() {
         $('#modalTitle').html('Edit Data');
         $('.modal-footer button[type=submit]').html('Edit Data');
-        $('.modal-body form').attr('action', 'http://localhost/serikathub/public/ConfederationLeader/editConfederationLeader');
+        $('.modal-body form').attr('action', 'http://localhost/serikathub/public/SpsbLeader/editSpsbLeader');
 
         const id = $(this).data('id');
         
         $.ajax({
-            url: 'http://localhost/serikathub/public/ConfederationLeader/getedit',
+            url: 'http://localhost/serikathub/public/SpsbLeader/getedit',
             data: {id: id}, 
             method: 'post',
             dataType: 'json',
