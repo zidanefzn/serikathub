@@ -104,12 +104,12 @@ class FederationLeader extends Controller {
         fputcsv($output, ['No', 'Nama', 'Jabatan', 'No. Telp']);
 
         $no = 1;
-        foreach ($data['fed_leader'] as $confedLeader) {
+        foreach ($data['fed_leader'] as $fedLeader) {
             fputcsv($output, [
                 $no++, 
-                $confedLeader['pf_nama'],
-                $confedLeader['pf_jabatan'],
-                $confedLeader['pf_no_telp']
+                $fedLeader['pf_nama'],
+                $fedLeader['pf_jabatan'],
+                $fedLeader['pf_no_telp']
             ]);
         }
 

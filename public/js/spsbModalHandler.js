@@ -43,7 +43,7 @@ $(function() {
         $('#nama, #jabatan, #no_telp').val('');
     });
 
-    $('.showEditModal.leader').on('click', function() {
+    $('.showEditModal.spsb-leader').on('click', function() {
         $('#modalTitle').html('Edit Data');
         $('.modal-footer button[type=submit]').html('Edit Data');
         $('.modal-body form').attr('action', 'http://localhost/serikathub/public/SpsbLeader/editSpsbLeader');
@@ -56,10 +56,10 @@ $(function() {
             method: 'post',
             dataType: 'json',
             success: function(data) {
-                $('#nama').val(data.pk_nama || data.nama);
-                $('#jabatan').val(data.pk_jabatan || data.jabatan);
-                $('#no_telp').val(data.pk_no_telp || data.no_telp);
-                $('#id').val(data.pk_id || data.id);
+                $('#nama').val(data.ps_nama || data.nama);
+                $('#jabatan').val(data.ps_jabatan || data.jabatan);
+                $('#no_telp').val(data.ps_no_telp || data.no_telp);
+                $('#id').val(data.ps_id || data.id);
             },
             error: function(xhr, status, error) {
                 console.error("Error AJAX:", status, error);
