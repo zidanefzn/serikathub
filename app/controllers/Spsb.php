@@ -2,7 +2,7 @@
 
 class Spsb extends Controller {
     public function index() {
-        $data['judul'] = 'Daftar SP/SB Perusahaan';
+        $data['judul'] = 'Daftar SP/SB';
         $data['spsb'] = $this->model('SpsbModel')->getAllSpsb();
         $data['fed'] = $this->model('FederationModel')->getAllFederation();
         $data['confed'] = $this->model('ConfederationModel')->getAllConfederation();
@@ -66,7 +66,7 @@ class Spsb extends Controller {
         $pdf->AddPage();
 
         $pdf->SetFont('Times', 'B', 13);
-        $pdf->Cell(280, 10, 'DAFTAR SP/SB PERUSAHAAN', 0, 0, 'C');
+        $pdf->Cell(280, 10, 'DAFTAR SP/SB', 0, 0, 'C');
 
         $pdf->Cell(10, 15, '', 0, 1,);
         $pdf->SetFont('Times', 'B', 12);
@@ -108,11 +108,11 @@ class Spsb extends Controller {
         $data['spsb'] = $this->model('SpsbModel')->getAllSpsb();
 
         header('Content-Type: text/csv');
-        header('Content-Disposition: attachment; filename="daftar_spsb_perusahaan.csv"');
+        header('Content-Disposition: attachment; filename="daftar_spsb.csv"');
 
         $output = fopen('php://output', 'w');
 
-        fputcsv($output, ['No', 'SP/SB Perusahaan', 'Alamat', 'No. Pencatatan', 'Afiliasi', '', 'Jumlah Anggota', 'Keterangan']);
+        fputcsv($output, ['No', 'SP/SB', 'Alamat', 'No. Pencatatan', 'Afiliasi', '', 'Jumlah Anggota', 'Keterangan']);
         fputcsv($output, ['', '', '', '', 'Federasi (F)', 'Konfederasi (K)', '', '']);
 
         $no = 1;

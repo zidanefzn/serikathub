@@ -44,7 +44,7 @@
                     <a href="<?= BASEURL ?>/recap" class="nav-item nav-link"><i class="fa-solid fa-database me-2"></i>Rekapitulasi</a>
                     <a href="<?= BASEURL ?>/confederation" class="nav-item nav-link"><i class="fa-solid fa-users me-2"></i>Konfederasi</a>
                     <a href="<?= BASEURL ?>/federation" class="nav-item nav-link"><i class="fa-solid fa-people-group me-2"></i>Federasi</a>
-                    <a href="<?= BASEURL ?>/spsb" class="nav-item nav-link"><i class="fa-solid fa-user-group me-2"></i>SP/SB Perusahaan</a>
+                    <a href="<?= BASEURL ?>/spsb" class="nav-item nav-link"><i class="fa-solid fa-user-group me-2"></i>SP/SB</a>
                 </div>  
             </nav>
         </div>
