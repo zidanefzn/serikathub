@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>SerikatHub | <?= $data['judul']; ?></title>
+    <link rel="website icon" type="png" href="<?= BASEURL ?>/img/web-icon.png">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
