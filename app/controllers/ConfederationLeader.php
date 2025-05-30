@@ -44,7 +44,6 @@ class ConfederationLeader extends Controller {
     public function getedit() {
         echo json_encode($this->model('ConfederationLeaderModel')->getLeaderById($_POST['id']));
     }
- 
 
     public function editConfederationLeader() {
         if( $this->model('ConfederationLeaderModel')->editDataConfederationLeader($_POST) > 0) {
@@ -58,14 +57,11 @@ class ConfederationLeader extends Controller {
         }
     }
 
-    public function generatePdf($id) {  // Tambahkan parameter $id
-        // Pastikan tidak ada output sebelumnya
+    public function generatePdf($id) {  
         ob_clean();
         
-        // Ambil data konfederasi
         $data['confed_leader'] = $this->model('ConfederationLeaderModel')->getConfederationLeaderById($id);
 
-        // Membuat instance FPDF
         require_once($_SERVER['DOCUMENT_ROOT'] . '/serikathub/public/lib/fpdf/fpdf.php');
         $pdf = new FPDF('P', 'mm', 'A4');
         $pdf->AddPage();
@@ -73,7 +69,6 @@ class ConfederationLeader extends Controller {
         $pdf->SetFont('Times', 'B', 13);
         $pdf->Cell(200, 10, 'DAFTAR PIMPINAN KONFEDERASI', 0, 0, 'C');
 
-        // Set font untuk header tabel
         $pdf->Cell(10, 15, '', 0, 1);
         $pdf->SetFont('Times', 'B', 12);
         $pdf->Cell(10, 10, 'No', 1, 0, 'C');
@@ -82,10 +77,8 @@ class ConfederationLeader extends Controller {
         $pdf->Cell(60, 10, 'No. Telp', 1, 0, 'C');
         $pdf->Ln();
 
-        // Set font untuk data tabel
         $pdf->SetFont('Times', '', 12);
 
-        // Menampilkan data dari database
         $no = 1;
         foreach ($data['confed_leader'] as $confedLeader) {
             $pdf->Cell(10, 10, $no++, 1, 0, 'C');
@@ -95,26 +88,20 @@ class ConfederationLeader extends Controller {
             $pdf->Ln();
         }
 
-        // Output PDF ke browser
-        $pdf->Output(); // Beri nama file
-        exit; // Pastikan tidak ada output setelahnya
+        $pdf->Output(); 
+        exit;
     }
 
     public function generateCsv($id) {
-        // Ambil data konfederasi
         $data['confed_leader'] = $this->model('ConfederationLeaderModel')->getConfederationLeaderById($id);
 
-        // Set header untuk pengunduhan file CSV
         header('Content-Type: text/csv');
         header('Content-Disposition: attachment; filename="daftar_pimpinan_konfederasi.csv"');
 
-        // Membuka file untuk ditulis
         $output = fopen('php://output', 'w');
 
-        // Menulis header kolom CSV
         fputcsv($output, ['No', 'Nama', 'Jabatan', 'No. Telp']);
 
-        // Menulis data dari database
         $no = 1;
         foreach ($data['confed_leader'] as $confedLeader) {
             fputcsv($output, [
@@ -125,7 +112,6 @@ class ConfederationLeader extends Controller {
             ]);
         }
 
-        // Menutup file
         fclose($output);
         exit;
     }

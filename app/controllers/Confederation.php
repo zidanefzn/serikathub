@@ -29,15 +29,18 @@ class Confederation extends Controller {
     }
 
     public function deleteConfederation($id) {
-        if( $this->model('ConfederationModel')->deleteDataConfederation($id) > 0) {
+        $result = $this->model('ConfederationModel')->deleteDataConfederation($id);
+        
+        if ($result > 0) {
             Flasher::setFlash('berhasil', 'dihapus', 'success');
-            header('Location: ' . BASEURL . '/confederation');
-            exit;
+        } elseif ($result === -1) {
+            Flasher::setFlash('gagal', 'dihapus karena konfederasi masih memiliki afiliasi dengan SP/SB', 'danger');
         } else {
             Flasher::setFlash('gagal', 'dihapus', 'danger');
-            header('Location: ' . BASEURL . '/confederation');
-            exit;
         }
+        
+        header('Location: ' . BASEURL . '/confederation');
+        exit;
     }
 
     public function getedit() {
@@ -57,10 +60,8 @@ class Confederation extends Controller {
     }
 
     public function generatePdf() {
-        // Ambil data konfederasi
         $data['confed'] = $this->model('ConfederationModel')->getAllConfederation();
 
-        // Membuat instance FPDF
         require_once($_SERVER['DOCUMENT_ROOT'] . '/serikathub/public/lib/fpdf/fpdf.php');
         $pdf = new FPDF('L', 'mm', 'A4');
         $pdf->AddPage();
@@ -68,7 +69,6 @@ class Confederation extends Controller {
         $pdf->SetFont('Times', 'B', 13);
         $pdf->Cell(280, 10, 'DAFTAR KONFEDERASI', 0, 0, 'C');
 
-        // Set font untuk header tabel
         $pdf->Cell(10, 15, '', 0, 1,);
         $pdf->SetFont('Times', 'B', 12);
         $pdf->Cell(10, 10, 'No', 1, 0, 'C');
@@ -79,10 +79,8 @@ class Confederation extends Controller {
         $pdf->Cell(40, 10, 'Keterangan', 1,  0, 'C');
         $pdf->Ln();
 
-        // Set font untuk data tabel
         $pdf->SetFont('Times', '', 12);
 
-        // Menampilkan data dari database
         $no = 1;
         foreach ($data['confed'] as $confed) {
             $pdf->Cell(10, 10, $no++, 1, 0, 'C');
@@ -94,25 +92,19 @@ class Confederation extends Controller {
             $pdf->Ln();
         }
 
-        // Output PDF ke browser
         $pdf->Output();
     }
 
     public function generateCsv() {
-        // Ambil data konfederasi
         $data['confed'] = $this->model('ConfederationModel')->getAllConfederation();
 
-        // Set header untuk pengunduhan file CSV
         header('Content-Type: text/csv');
         header('Content-Disposition: attachment; filename="daftar_konfederasi.csv"');
 
-        // Membuka file untuk ditulis
         $output = fopen('php://output', 'w');
 
-        // Menulis header kolom CSV
         fputcsv($output, ['No', 'Konfederasi', 'Alamat', 'No. Pencatatan', 'Jumlah Anggota', 'Keterangan']);
 
-        // Menulis data dari database
         $no = 1;
         foreach ($data['confed'] as $confed) {
             fputcsv($output, [
@@ -125,7 +117,6 @@ class Confederation extends Controller {
             ]);
         }
 
-        // Menutup file
         fclose($output);
         exit;
     }

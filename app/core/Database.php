@@ -10,7 +10,6 @@ class Database {
     private $stmt; //statement
 
     public function __construct() {
-        // koneksi dengan database
         // data source name
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->db_name;
 

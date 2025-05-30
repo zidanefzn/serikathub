@@ -61,7 +61,6 @@ class ConfederationLeaderModel {
         return $this->db->rowCount();
     }
 
-    // Di ConfederationLeaderModel, tambahkan method baru:
     public function getLeaderById($id) {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id = :id');
         $this->db->bind('id', $id);

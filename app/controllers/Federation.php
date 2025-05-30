@@ -29,15 +29,18 @@ class Federation extends Controller {
     }
 
     public function deleteFederation($id) {
-        if( $this->model('FederationModel')->deleteDataFederation($id) > 0) {
+        $result = $this->model('FederationModel')->deleteDataFederation($id);
+        
+        if ($result > 0) {
             Flasher::setFlash('berhasil', 'dihapus', 'success');
-            header('Location: ' . BASEURL . '/federation');
-            exit;
+        } elseif ($result === -1) {
+            Flasher::setFlash('gagal', 'dihapus karena federasi masih memiliki afiliasi dengan SP/SB', 'danger');
         } else {
             Flasher::setFlash('gagal', 'dihapus', 'danger');
-            header('Location: ' . BASEURL . '/federation');
-            exit;
         }
+        
+        header('Location: ' . BASEURL . '/federation');
+        exit;
     }
 
     public function getedit() {

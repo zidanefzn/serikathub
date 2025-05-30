@@ -30,7 +30,6 @@ class App {
            $this->params = array_values($url);
         }
 
-        // jalankan coltroller dan method lalu jalankan params jika ada
         call_user_func_array([$this->controller, $this->method], $this->params);
         
     }

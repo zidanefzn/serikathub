@@ -45,7 +45,6 @@ class Recap extends Controller {
     }
 
     public function generateCsvProvinsi($provinsi_id) {
-        // Ambil data berdasarkan provinsi_id
         $data['spsb'] = $this->model('SpsbModel')->getAllSpsb($provinsi_id);
 
         header('Content-Type: text/csv');
