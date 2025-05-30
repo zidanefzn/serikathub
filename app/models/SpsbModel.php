@@ -14,8 +14,8 @@ class SpsbModel {
                     spsb.nama AS nama, 
                     spsb.alamat AS alamat, 
                     spsb.no_pencatatan AS no_pencatatan,
-                    konfederasi.nama AS konfederasi_nama,
                     federasi.nama AS federasi_nama,
+                    konfederasi.nama AS konfederasi_nama,
                     spsb.jumlah_anggota AS jumlah_anggota,
                     spsb.keterangan AS keterangan,
                     spsb.kota_id
