@@ -8,7 +8,7 @@ class SpsbModel {
         $this->db = new Database;
     }
 
-    public function getAllSpsb() {
+    public function getAllSpsb($provinsi_id = null) {
         $query = 'SELECT 
                     spsb.id AS id,
                     provinsi.nama AS provinsi_nama,
@@ -32,7 +32,14 @@ class SpsbModel {
                 LEFT JOIN
                     provinsi ON kota.provinsi_id = provinsi.id';
 
-        $this->db->query($query);
+        if ($provinsi_id !== null) {
+            $query .= " WHERE provinsi.id = :provinsi_id";
+            $this->db->query($query);
+            $this->db->bind(':provinsi_id', $provinsi_id);
+        } else {
+            $this->db->query($query);
+        }
+        
         return $this->db->resultSet();
     }
 
