@@ -57,41 +57,6 @@ class ConfederationLeader extends Controller {
         }
     }
 
-    public function generatePdf($id) {  
-        ob_clean();
-        
-        $data['confed_leader'] = $this->model('ConfederationLeaderModel')->getConfederationLeaderById($id);
-
-        require_once($_SERVER['DOCUMENT_ROOT'] . '/serikathub/public/lib/fpdf/fpdf.php');
-        $pdf = new FPDF('P', 'mm', 'A4');
-        $pdf->AddPage();
-
-        $pdf->SetFont('Times', 'B', 13);
-        $pdf->Cell(200, 10, 'DAFTAR PIMPINAN KONFEDERASI', 0, 0, 'C');
-
-        $pdf->Cell(10, 15, '', 0, 1);
-        $pdf->SetFont('Times', 'B', 12);
-        $pdf->Cell(10, 10, 'No', 1, 0, 'C');
-        $pdf->Cell(65, 10, 'Nama', 1, 0, 'C');
-        $pdf->Cell(55, 10, 'Jabatan', 1, 0, 'C');
-        $pdf->Cell(60, 10, 'No. Telp', 1, 0, 'C');
-        $pdf->Ln();
-
-        $pdf->SetFont('Times', '', 12);
-
-        $no = 1;
-        foreach ($data['confed_leader'] as $confedLeader) {
-            $pdf->Cell(10, 10, $no++, 1, 0, 'C');
-            $pdf->Cell(65, 10, $confedLeader['pk_nama'], 1, 0, 'C');  // Gunakan pk_nama
-            $pdf->Cell(55, 10, $confedLeader['pk_jabatan'], 1, 0, 'C'); // Gunakan pk_jabatan
-            $pdf->Cell(60, 10, $confedLeader['pk_no_telp'], 1, 0, 'C'); // Gunakan pk_no_telp
-            $pdf->Ln();
-        }
-
-        $pdf->Output(); 
-        exit;
-    }
-
     public function generateCsv($id) {
         $data['confed_leader'] = $this->model('ConfederationLeaderModel')->getConfederationLeaderById($id);
 

@@ -58,41 +58,6 @@ class FederationLeader extends Controller {
         }
     }
 
-    public function generatePdf($id) {  
-        ob_clean();
-        
-        $data['fed_leader'] = $this->model('FederationLeaderModel')->getFederationLeaderById($id);
-
-        require_once($_SERVER['DOCUMENT_ROOT'] . '/serikathub/public/lib/fpdf/fpdf.php');
-        $pdf = new FPDF('P', 'mm', 'A4');
-        $pdf->AddPage();
-
-        $pdf->SetFont('Times', 'B', 13);
-        $pdf->Cell(200, 10, 'DAFTAR PIMPINAN FEDERASI', 0, 0, 'C');
-
-        $pdf->Cell(10, 15, '', 0, 1);
-        $pdf->SetFont('Times', 'B', 12);
-        $pdf->Cell(10, 10, 'No', 1, 0, 'C');
-        $pdf->Cell(65, 10, 'Nama', 1, 0, 'C');
-        $pdf->Cell(55, 10, 'Jabatan', 1, 0, 'C');
-        $pdf->Cell(60, 10, 'No. Telp', 1, 0, 'C');
-        $pdf->Ln();
-
-        $pdf->SetFont('Times', '', 12);
-
-        $no = 1;
-        foreach ($data['fed_leader'] as $fedLeader) {
-            $pdf->Cell(10, 10, $no++, 1, 0, 'C');
-            $pdf->Cell(65, 10, $fedLeader['pf_nama'], 1, 0, 'C');
-            $pdf->Cell(55, 10, $fedLeader['pf_jabatan'], 1, 0, 'C');
-            $pdf->Cell(60, 10, $fedLeader['pf_no_telp'], 1, 0, 'C'); 
-            $pdf->Ln();
-        }
-
-        $pdf->Output(); 
-        exit;
-    }
-
     public function generateCsv($id) {
         $data['fed_leader'] = $this->model('FederationLeaderModel')->getFederationLeaderById($id);
 

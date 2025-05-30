@@ -6,7 +6,6 @@
                         <div class="col-sm-12 d-flex justify-content-between">
                             <h2 class="mb-4">Daftar Pimpinan SP/SB</h2>
                             <div>
-                                <a href="<?= BASEURL; ?>/SpsbLeader/generatePdf/<?= $data['spsb_id']; ?>" class="btn btn-secondary"><i class="fa-solid fa-file-pdf"></i> PDF</a>
                                 <a href="<?= BASEURL; ?>/SpsbLeader/generateCsv/<?= $data['spsb_id']; ?>" class="btn btn-secondary"><i class="fa-solid fa-file-csv"></i> CSV</a>
                             </div>
                         </div>
