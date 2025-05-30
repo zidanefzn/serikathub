@@ -10,7 +10,9 @@ class SpsbModel {
 
     public function getAllSpsb() {
         $query = 'SELECT 
-                    spsb.id AS id,  
+                    spsb.id AS id,
+                    provinsi.nama AS provinsi_nama,
+                    kota.nama AS kota_nama,  
                     spsb.nama AS nama, 
                     spsb.alamat AS alamat, 
                     spsb.no_pencatatan AS no_pencatatan,
@@ -24,7 +26,11 @@ class SpsbModel {
                 LEFT JOIN 
                     konfederasi ON spsb.konfederasi_id = konfederasi.id
                 LEFT JOIN 
-                    federasi ON spsb.federasi_id = federasi.id';
+                    federasi ON spsb.federasi_id = federasi.id
+                LEFT JOIN
+                    kota ON spsb.kota_id = kota.id
+                LEFT JOIN
+                    provinsi ON kota.provinsi_id = provinsi.id';
 
         $this->db->query($query);
         return $this->db->resultSet();
