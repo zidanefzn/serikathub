@@ -1,10 +1,9 @@
 $(function() {
-    // Handler untuk Spsb
+    // Spsb Handler
     $('.addBtn.spsb').on('click', function() {
         $('#modalTitle').html('Tambah Data');
         $('.modal-footer button[type=submit]').html('Tambah Data');
         $('.modal-body form').attr('action', 'http://localhost/serikathub/public/Spsb/addSpsb');
-        // Kosongkan form
         $('#nama, #alamat, #no_pencatatan, #federasi_id, #konfederasi_id, #jumlah_anggota #keterangan, #kota_id').val('');
     });
 
@@ -34,12 +33,11 @@ $(function() {
         });
     });
 
-    // Handler untuk SpsbLeader
+    // SpsbLeader Handler
     $('.addBtn.spsb-leader').on('click', function() {
         $('#modalTitle').html('Tambah Data');
         $('.modal-footer button[type=submit]').html('Tambah Data');
         $('.modal-body form').attr('action', 'http://localhost/serikathub/public/SpsbLeader/addSpsbLeader');
-        // Kosongkan form
         $('#nama, #jabatan, #no_telp').val('');
     });
 

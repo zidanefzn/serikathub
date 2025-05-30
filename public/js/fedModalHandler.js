@@ -1,4 +1,5 @@
 $(function() {
+    // Federation Handler
     $('.addBtn.federation').on('click', function() {
         $('#modalTitle').html('Tambah Data');
         $('.modal-footer button[type=submit]').html('Tambah Data');
@@ -30,6 +31,7 @@ $(function() {
         });
     });
 
+    // FederationLeader Handler
     $('.addBtn.fed-leader').on('click', function() {
         $('#modalTitle').html('Tambah Data');
         $('.modal-footer button[type=submit]').html('Tambah Data');

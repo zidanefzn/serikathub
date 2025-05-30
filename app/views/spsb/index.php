@@ -3,11 +3,9 @@
         <div class="col-sm-12 col-xl-6 vw-100">
             <div class="bg-light rounded h-100 p-4">
                 <div class="row">
-                        <div class="col-sm-12 d-flex justify-content-between">
-                            <h2 class="mb-4">Daftar SP/SB</h2>
-                            <div>
-                                <a href="<?= BASEURL; ?>/Spsb/generateCsv" class="btn btn-secondary"><i class="fa-solid fa-file-csv"></i> CSV</a>
-                            </div>
+                        <div class="col-sm-12 d-flex justify-content-between align-items-center">
+                            <h4 class="mb-4">Daftar SP/SB</h4>
+                            <a href="<?= BASEURL; ?>/Spsb/generateCsv" class="btn btn-secondary"><i class="fa-solid fa-file-csv"></i> CSV</a>
                         </div>
                     </div>
                 <div class="table-responsive">

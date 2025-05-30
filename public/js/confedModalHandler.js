@@ -1,10 +1,9 @@
 $(function() {
-    // Handler untuk Confederation
+    // Confederation Handler
     $('.addBtn.confederation').on('click', function() {
         $('#modalTitle').html('Tambah Data');
         $('.modal-footer button[type=submit]').html('Tambah Data');
         $('.modal-body form').attr('action', 'http://localhost/serikathub/public/Confederation/addConfederation');
-        // Kosongkan form
         $('#nama, #alamat, #no_pencatatan, #keterangan, #kota_id').val('');
     });
 
@@ -31,12 +30,11 @@ $(function() {
         });
     });
 
-    // Handler untuk ConfederationLeader
+    // ConfederationLeader Handler
     $('.addBtn.leader').on('click', function() {
         $('#modalTitle').html('Tambah Data');
         $('.modal-footer button[type=submit]').html('Tambah Data');
         $('.modal-body form').attr('action', 'http://localhost/serikathub/public/ConfederationLeader/addConfederationLeader');
-        // Kosongkan form
         $('#nama, #jabatan, #no_telp').val('');
     });
 
