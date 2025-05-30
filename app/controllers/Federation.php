@@ -4,6 +4,7 @@ class Federation extends Controller {
     public function index() {
         $data['judul'] = 'Daftar Federasi';
         $data['fed'] = $this->model('FederationModel')->getAllFederation();
+        $data['confed'] = $this->model('ConfederationModel')->getAllConfederation();
         $data['city'] = $this->model('CityModel')->getAllCity();
         $this->view('templates/header', $data);
         $this->view('federation/index', $data);

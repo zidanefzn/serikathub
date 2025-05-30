@@ -1,11 +1,9 @@
 $(function() {
-    // Handler untuk federation
     $('.addBtn.federation').on('click', function() {
         $('#modalTitle').html('Tambah Data');
         $('.modal-footer button[type=submit]').html('Tambah Data');
         $('.modal-body form').attr('action', 'http://localhost/serikathub/public/Federation/addFederation');
-        // Kosongkan form
-        $('#nama, #alamat, #no_pencatatan, #keterangan, #kota_id').val('');
+        $('#nama, #alamat, #no_pencatatan, #konfederasi_id, #keterangan, #kota_id').val('');
     });
 
     $('.showEditModal.federation').on('click', function() {
@@ -24,6 +22,7 @@ $(function() {
                 $('#nama').val(data.nama);
                 $('#alamat').val(data.alamat);
                 $('#no_pencatatan').val(data.no_pencatatan);
+                $('#konfederasi_id').val(data.konfederasi_id);
                 $('#keterangan').val(data.keterangan);
                 $('#kota_id').val(data.kota_id);
                 $('#id').val(data.id);
@@ -31,12 +30,10 @@ $(function() {
         });
     });
 
-    // Handler untuk federationLeader
     $('.addBtn.fed-leader').on('click', function() {
         $('#modalTitle').html('Tambah Data');
         $('.modal-footer button[type=submit]').html('Tambah Data');
         $('.modal-body form').attr('action', 'http://localhost/serikathub/public/FederationLeader/addFederationLeader');
-        // Kosongkan form
         $('#nama, #jabatan, #no_telp').val('');
     });
 

@@ -36,7 +36,7 @@
             <div class="bg-light rounded h-100 p-4">
                 <div class="row">
                     <div class="col-sm-12 d-flex justify-content-between">
-                        <h2 class="mb-4">Jumlah SP/SB Setiap Provinsi</h2>
+                        <h2 class="mb-4">Jumlah Konfederasi, Federasi, dan SP/SB Setiap Provinsi</h2>
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -45,6 +45,8 @@
                             <tr>
                                 <th class="text-center">No</th>
                                 <th class="text-center">Provinsi</th>
+                                <th class="text-center">Jumlah Konfederasi</th>
+                                <th class="text-center">Jumlah Federasi</th>
                                 <th class="text-center">Jumlah SP/SB</th>
                                 <th class="text-center">Jumlah Anggota</th>
                             </tr>
@@ -55,6 +57,8 @@
                             <tr>
                                 <td class="text-center"><?= $no++ ?></td>
                                 <td class="text-center"><?= $spsbProvince['provinsi_nama']; ?></td>
+                                <td class="text-center"><?= $spsbProvince['jumlah_konfederasi']; ?></td>
+                                <td class="text-center"><?= $spsbProvince['jumlah_federasi']; ?></td>
                                 <td class="text-center"><?= $spsbProvince['jumlah_spsb']; ?></td>
                                 <td class="text-center"><?= $spsbProvince['total_anggota']; ?></td>
                             </tr>

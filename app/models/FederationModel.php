@@ -25,14 +25,15 @@ class FederationModel {
     }
 
     public function addDataFederation($data) {
-        $query = "INSERT INTO federasi (nama, alamat, no_pencatatan, keterangan, kota_id)
+        $query = "INSERT INTO federasi (nama, alamat, no_pencatatan, konfederasi_id, keterangan, kota_id)
                     VALUES
-                        (:nama, :alamat, :no_pencatatan, :keterangan, :kota_id)";
+                        (:nama, :alamat, :no_pencatatan, :konfederasi_id, :keterangan, :kota_id)";
 
         $this->db->query($query);
         $this->db->bind('nama', $data['nama']);
         $this->db->bind('alamat', $data['alamat']);
         $this->db->bind('no_pencatatan', $data['no_pencatatan']);
+        $this->db->bind('konfederasi_id', empty($data['konfederasi_id']) ? null : $data['konfederasi_id']);
         $this->db->bind('keterangan', $data['keterangan']);
         $this->db->bind('kota_id', $data['kota_id']);
 
@@ -61,6 +62,7 @@ class FederationModel {
                     nama = :nama,
                     alamat = :alamat,
                     no_pencatatan = :no_pencatatan,
+                    konfederasi_id = :konfederasi_id,
                     keterangan = :keterangan,
                     kota_id = :kota_id
                 WHERE id = :id";
@@ -69,6 +71,7 @@ class FederationModel {
         $this->db->bind('nama', $data['nama']);
         $this->db->bind('alamat', $data['alamat']);
         $this->db->bind('no_pencatatan', $data['no_pencatatan']);
+        $this->db->bind('konfederasi_id', empty($data['konfederasi_id']) ? null : $data['konfederasi_id']);
         $this->db->bind('keterangan', $data['keterangan']);
         $this->db->bind('kota_id', $data['kota_id']);
         $this->db->bind('id', $data['id']);
