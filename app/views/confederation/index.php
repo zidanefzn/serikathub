@@ -79,7 +79,7 @@
                                     </div>
                                     <div class="form-group mb-4">
                                         <label for="kota_id" class="mb-1">Kabupaten/Kota *</label>
-                                        <select style="width:100%" class="form-select js-example-basic-single" id="kota_id" name="kota_id">
+                                        <select style="width:100%" class="form-select js-example-basic-single kota" id="kota_id" name="kota_id">
                                             <option value="">Pilih Kota</option>
                                             <?php foreach ($data['city'] as $city) : ?>
                                                 <option value="<?= $city['id']; ?>" <?= ($city['id'] == $city['id']) ? 'selected' : ''; ?>>
