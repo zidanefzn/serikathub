@@ -37,6 +37,9 @@
                 <div class="row">
                     <div class="col-sm-12 d-flex justify-content-between">
                         <h2 class="mb-4">Jumlah Konfederasi, Federasi, dan SP/SB Setiap Provinsi</h2>
+                        <div>
+                            <a href="<?= BASEURL; ?>/Dashboard/generateCsv" class="btn btn-secondary"><i class="fa-solid fa-file-csv"></i> CSV</a>
+                        </div>
                     </div>
                 </div>
                 <div class="table-responsive">
