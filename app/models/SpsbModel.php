@@ -100,9 +100,9 @@ class SpsbModel {
         $this->db->bind('nama', $data['nama']);
         $this->db->bind('alamat', $data['alamat']);
         $this->db->bind('no_pencatatan', $data['no_pencatatan']);
-        $this->db->bind('federasi_id', $data['federasi_id']);
-        $this->db->bind('konfederasi_id', $data['konfederasi_id']);
-        $this->db->bind('jumlah_anggota', $data['jumlah_anggota']);
+        $this->db->bind('federasi_id', empty($data['federasi_id']) ? null : $data['federasi_id']);
+        $this->db->bind('konfederasi_id', empty($data['konfederasi_id']) ? null : $data['konfederasi_id']);
+        $this->db->bind('jumlah_anggota', empty($data['jumlah_anggota']) ? null : $data['jumlah_anggota']);
         $this->db->bind('keterangan', $data['keterangan']);
         $this->db->bind('kota_id', $data['kota_id']);
         $this->db->bind('id', $data['id']);
