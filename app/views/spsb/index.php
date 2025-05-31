@@ -47,7 +47,7 @@
                                 <td><a href="<?= BASEURL; ?>/SpsbLeader/SpsbLeader/<?= $spsb['id']; ?>" class="btn btn-outline-secondary btn-sm">Detail</a></td>
                                 <td><?= $spsb['keterangan']; ?></td>
                                 <td><a href="<?= BASEURL; ?>/Spsb/editSpsb/<?= $spsb['id']; ?>" class="link-secondary showEditModal spsb" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $spsb['id'] ?>"><i class="fa-solid fa-pen-to-square fs-3"></i></a></td>
-                                <td><a href="<?= BASEURL; ?>/Spsb/deleteSpsb/<?= $spsb['id']; ?>" class="link-danger"><i class="fa-solid fa-trash fs-3"></i></a></td>
+                                <td><a href="<?= BASEURL; ?>/Spsb/deleteSpsb/<?= $spsb['id']; ?>" class="link-danger" onclick="return confirm('Apakah anda yakin ingin menghapus SP/SB?');"><i class="fa-solid fa-trash fs-3"></i></a></td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>

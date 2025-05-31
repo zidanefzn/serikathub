@@ -42,18 +42,13 @@ class ConfederationModel {
     }
 
     public function deleteDataConfederation($id) {
-        try {
-            $query = "DELETE FROM konfederasi WHERE id = :id";
-            $this->db->query($query);
-            $this->db->bind('id', $id);
-            $this->db->execute();
-            return $this->db->rowCount();
-        } catch (PDOException $e) {
-            if ($e->getCode() == '23000' && strpos($e->getMessage(), '1451') !== false) {
-                return -1;
-            }
-            throw $e;
-        }
+        $query = "DELETE FROM konfederasi WHERE id = :id";
+        $this->db->query($query);
+        $this->db->bind('id', $id);
+
+        $this->db->execute();
+        
+        return $this->db->rowCount();
     }
 
     public function editDataConfederation($data) {

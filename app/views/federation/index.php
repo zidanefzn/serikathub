@@ -40,7 +40,7 @@
                                 <td><a href="<?= BASEURL; ?>/FederationLeader/FederationLeader/<?= $fed['id']; ?>" class="btn btn-outline-secondary btn-sm">Detail</a></td>
                                 <td><?= $fed['keterangan']; ?></td>
                                 <td><a href="<?= BASEURL; ?>/Federation/editFederation/<?= $fed['id']; ?>" class="link-secondary showEditModal federation" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $fed['id'] ?>"><i class="fa-solid fa-pen-to-square fs-3"></i></a></td>
-                                <td><a href="<?= BASEURL; ?>/Federation/deleteFederation/<?= $fed['id']; ?>" class="link-danger"><i class="fa-solid fa-trash fs-3"></i></a></td>
+                                <td><a href="<?= BASEURL; ?>/Federation/deleteFederation/<?= $fed['id']; ?>" class="link-danger" onclick="return confirm('Apakah anda yakin ingin menghapus federasi? Federasi mungkin masih memiliki afiliasi.');"><i class="fa-solid fa-trash fs-3"></i></a></td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>

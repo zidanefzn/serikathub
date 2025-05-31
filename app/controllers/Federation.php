@@ -34,14 +34,13 @@ class Federation extends Controller {
         
         if ($result > 0) {
             Flasher::setFlash('berhasil', 'dihapus', 'success');
-        } elseif ($result === -1) {
-            Flasher::setFlash('gagal', 'dihapus karena federasi masih memiliki afiliasi dengan SP/SB', 'danger');
+            header('Location: ' . BASEURL . '/federation');
+            exit;
         } else {
             Flasher::setFlash('gagal', 'dihapus', 'danger');
+            header('Location: ' . BASEURL . '/federation');
+            exit;
         }
-        
-        header('Location: ' . BASEURL . '/federation');
-        exit;
     }
 
     public function getedit() {
