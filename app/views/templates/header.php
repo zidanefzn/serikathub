@@ -37,15 +37,15 @@
 
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar d-flex justify-content-center bg-light navbar-light">
-                <a href="<?= BASEURL ?>/dashboard" class="navbar-brand mx-4 mb-3">
+                <a href="<?= BASEURL ?>/Dashboard" class="navbar-brand mx-4 mb-3">
                     <img src="<?= BASEURL ?>/img/logo.png" alt="KEMNAKER" class="d-none d-lg-block" width="90">
                 </a>
                 <div class="navbar-nav w-100">
-                    <a href="<?= BASEURL ?>/dashboard" class="nav-item nav-link"><i class="fa-solid fa-house me-2"></i>Dashboard</a>
-                    <a href="<?= BASEURL ?>/recap" class="nav-item nav-link"><i class="fa-solid fa-database me-2"></i>Rekapitulasi</a>
-                    <a href="<?= BASEURL ?>/confederation" class="nav-item nav-link"><i class="fa-solid fa-users me-2"></i>Konfederasi</a>
-                    <a href="<?= BASEURL ?>/federation" class="nav-item nav-link"><i class="fa-solid fa-people-group me-2"></i>Federasi</a>
-                    <a href="<?= BASEURL ?>/spsb" class="nav-item nav-link"><i class="fa-solid fa-user-group me-2"></i>SP/SB</a>
+                    <a href="<?= BASEURL ?>/Dashboard" class="nav-item nav-link"><i class="fa-solid fa-house me-2"></i>Dashboard</a>
+                    <a href="<?= BASEURL ?>/Recap" class="nav-item nav-link"><i class="fa-solid fa-database me-2"></i>Rekapitulasi</a>
+                    <a href="<?= BASEURL ?>/Confederation" class="nav-item nav-link"><i class="fa-solid fa-users me-2"></i>Konfederasi</a>
+                    <a href="<?= BASEURL ?>/Federation" class="nav-item nav-link"><i class="fa-solid fa-people-group me-2"></i>Federasi</a>
+                    <a href="<?= BASEURL ?>/Spsb" class="nav-item nav-link"><i class="fa-solid fa-user-group me-2"></i>SP/SB</a>
                 </div>  
             </nav>
         </div>
