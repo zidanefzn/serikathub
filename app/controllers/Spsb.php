@@ -15,17 +15,17 @@ class Spsb extends Controller {
     public function addSpsb() {
         if (empty($_POST['nama']) || empty($_POST['kota_id'])) {
             Flasher::setFlash('Nama dan Kota wajib diisi!', 'Harap isi terlebih dahulu!', 'danger');
-            header('Location: ' . BASEURL . '/spsb');
+            header('Location: ' . BASEURL . '/Spsb');
             exit;
         }
 
         if( $this->model('SpsbModel')->addDataSpsb($_POST) > 0) {
             Flasher::setFlash('berhasil', 'ditambahkan', 'success');
-            header('Location: ' . BASEURL . '/spsb');
+            header('Location: ' . BASEURL . '/Spsb');
             exit;
         } else {
             Flasher::setFlash('gagal', 'ditambahkan', 'danger');
-            header('Location: ' . BASEURL . '/spsb');
+            header('Location: ' . BASEURL . '/Spsb');
             exit;
         }
     }
@@ -33,11 +33,11 @@ class Spsb extends Controller {
     public function deleteSpsb($id) {
         if( $this->model('SpsbModel')->deleteDataSpsb($id) > 0) {
             Flasher::setFlash('berhasil', 'dihapus', 'success');
-            header('Location: ' . BASEURL . '/spsb');
+            header('Location: ' . BASEURL . '/Spsb');
             exit;
         } else {
             Flasher::setFlash('gagal', 'dihapus', 'danger');
-            header('Location: ' . BASEURL . '/spsb');
+            header('Location: ' . BASEURL . '/Spsb');
             exit;
         }
     }
@@ -49,11 +49,11 @@ class Spsb extends Controller {
     public function editSpsb() {
         if( $this->model('SpsbModel')->editDataSpsb($_POST) > 0) {
             Flasher::setFlash('berhasil', 'diubah', 'success');
-            header('Location: ' . BASEURL . '/spsb');
+            header('Location: ' . BASEURL . '/Spsb');
             exit;
         } else {
             Flasher::setFlash('gagal', 'diubah', 'danger');
-            header('Location: ' . BASEURL . '/spsb');
+            header('Location: ' . BASEURL . '/Spsb');
             exit;
         }
     }

@@ -13,17 +13,17 @@ class Confederation extends Controller {
     public function addConfederation() {
         if (empty($_POST['nama']) || empty($_POST['kota_id'])) {
             Flasher::setFlash('Nama dan Kota wajib diisi!', 'Harap isi terlebih dahulu!', 'danger');
-            header('Location: ' . BASEURL . '/confederation');
+            header('Location: ' . BASEURL . '/Confederation');
             exit;
         }
 
         if( $this->model('ConfederationModel')->addDataConfederation($_POST) > 0) {
             Flasher::setFlash('berhasil', 'ditambahkan', 'success');
-            header('Location: ' . BASEURL . '/confederation');
+            header('Location: ' . BASEURL . '/Confederation');
             exit;
         } else {
             Flasher::setFlash('gagal', 'ditambahkan', 'danger');
-            header('Location: ' . BASEURL . '/confederation');
+            header('Location: ' . BASEURL . '/Confederation');
             exit;
         }
     }
@@ -33,11 +33,11 @@ class Confederation extends Controller {
         
         if ($result > 0) {
             Flasher::setFlash('berhasil', 'dihapus', 'success');
-            header('Location: ' . BASEURL . '/confederation');
+            header('Location: ' . BASEURL . '/Confederation');
             exit;
         } else {
             Flasher::setFlash('gagal', 'dihapus', 'danger');
-            header('Location: ' . BASEURL . '/confederation');
+            header('Location: ' . BASEURL . '/Confederation');
             exit;
         }
     }
@@ -49,11 +49,11 @@ class Confederation extends Controller {
     public function editConfederation() {
         if( $this->model('ConfederationModel')->editDataConfederation($_POST) > 0) {
             Flasher::setFlash('berhasil', 'diubah', 'success');
-            header('Location: ' . BASEURL . '/confederation');
+            header('Location: ' . BASEURL . '/Confederation');
             exit;
         } else {
             Flasher::setFlash('gagal', 'diubah', 'danger');
-            header('Location: ' . BASEURL . '/confederation');
+            header('Location: ' . BASEURL . '/Confederation');
             exit;
         }
     }

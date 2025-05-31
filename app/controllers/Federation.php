@@ -14,17 +14,17 @@ class Federation extends Controller {
     public function addFederation() {
         if (empty($_POST['nama']) || empty($_POST['kota_id'])) {
             Flasher::setFlash('Nama dan Kota wajib diisi!', 'Harap isi terlebih dahulu!', 'danger');
-            header('Location: ' . BASEURL . '/federation');
+            header('Location: ' . BASEURL . '/Federation');
             exit;
         }
 
         if( $this->model('FederationModel')->addDataFederation($_POST) > 0) {
             Flasher::setFlash('berhasil', 'ditambahkan', 'success');
-            header('Location: ' . BASEURL . '/federation');
+            header('Location: ' . BASEURL . '/Federation');
             exit;
         } else {
             Flasher::setFlash('gagal', 'ditambahkan', 'danger');
-            header('Location: ' . BASEURL . '/federation');
+            header('Location: ' . BASEURL . '/Federation');
             exit;
         }
     }
@@ -34,11 +34,11 @@ class Federation extends Controller {
         
         if ($result > 0) {
             Flasher::setFlash('berhasil', 'dihapus', 'success');
-            header('Location: ' . BASEURL . '/federation');
+            header('Location: ' . BASEURL . '/Federation');
             exit;
         } else {
             Flasher::setFlash('gagal', 'dihapus', 'danger');
-            header('Location: ' . BASEURL . '/federation');
+            header('Location: ' . BASEURL . '/Federation');
             exit;
         }
     }
@@ -50,11 +50,11 @@ class Federation extends Controller {
     public function editFederation() {
         if( $this->model('FederationModel')->editDataFederation($_POST) > 0) {
             Flasher::setFlash('berhasil', 'diubah', 'success');
-            header('Location: ' . BASEURL . '/federation');
+            header('Location: ' . BASEURL . '/Federation');
             exit;
         } else {
             Flasher::setFlash('gagal', 'diubah', 'danger');
-            header('Location: ' . BASEURL . '/federation');
+            header('Location: ' . BASEURL . '/Federation');
             exit;
         }
     }

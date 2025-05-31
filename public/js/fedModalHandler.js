@@ -52,10 +52,10 @@ $(function() {
             method: 'post',
             dataType: 'json',
             success: function(data) {
-                $('#nama').val(data.pk_nama || data.nama);
-                $('#jabatan').val(data.pk_jabatan || data.jabatan);
-                $('#no_telp').val(data.pk_no_telp || data.no_telp);
-                $('#id').val(data.pk_id || data.id);
+                $('#nama').val(data.pf_nama || data.nama);
+                $('#jabatan').val(data.pf_jabatan || data.jabatan);
+                $('#no_telp').val(data.pf_no_telp || data.no_telp);
+                $('#id').val(data.pf_id || data.id);
             },
             error: function(xhr, status, error) {
                 console.error("Error AJAX:", status, error);
