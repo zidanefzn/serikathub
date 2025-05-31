@@ -41,27 +41,27 @@
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <table id="example" class="table table-bordered table-striped text-center">
+                    <table id="example" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th class="text-center">No</th>
-                                <th class="text-center">Provinsi</th>
-                                <th class="text-center">Jumlah Konfederasi</th>
-                                <th class="text-center">Jumlah Federasi</th>
-                                <th class="text-center">Jumlah SP/SB</th>
-                                <th class="text-center">Jumlah Anggota</th>
+                                <th class="text-center align-middle">No</th>
+                                <th class="text-center align-middle">Provinsi</th>
+                                <th class="text-center align-middle">Jumlah Konfederasi</th>
+                                <th class="text-center align-middle">Jumlah Federasi</th>
+                                <th class="text-center align-middle">Jumlah SP/SB</th>
+                                <th class="text-center align-middle">Jumlah Anggota</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $no = 1; ?>
                             <?php foreach($data['spsb_provinsi'] as $spsbProvince) : ?>
                             <tr>
-                                <td class="text-center"><?= $no++ ?></td>
-                                <td class="text-center"><?= $spsbProvince['provinsi_nama']; ?></td>
-                                <td class="text-center"><?= $spsbProvince['jumlah_konfederasi']; ?></td>
-                                <td class="text-center"><?= $spsbProvince['jumlah_federasi']; ?></td>
-                                <td class="text-center"><?= $spsbProvince['jumlah_spsb']; ?></td>
-                                <td class="text-center"><?= $spsbProvince['total_anggota']; ?></td>
+                                <td class="text-center align-middle"><?= $no++ ?></td>
+                                <td class="text-center align-middle"><?= $spsbProvince['provinsi_nama']; ?></td>
+                                <td class="text-center align-middle"><?= $spsbProvince['jumlah_konfederasi']; ?></td>
+                                <td class="text-center align-middle"><?= $spsbProvince['jumlah_federasi']; ?></td>
+                                <td class="text-center align-middle"><?= $spsbProvince['jumlah_spsb']; ?></td>
+                                <td class="text-center align-middle"><?= $spsbProvince['total_anggota']; ?></td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>

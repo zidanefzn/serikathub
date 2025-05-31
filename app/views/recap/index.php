@@ -25,7 +25,7 @@
                         </div>
                     </div>
 
-                    <table id="example" class="table table-bordered table-striped text-center align-middle">
+                    <table id="example" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th class="text-center align-middle" rowspan="2">No</th>
@@ -48,15 +48,15 @@
                             <?php foreach($data['spsb'] as $spsb) : ?>
                             <tr>
                                 <td class="text-center"><?= $no++ ?></td>
-                                <td><?= $spsb['provinsi_nama']; ?></td>
-                                <td><?= $spsb['kota_nama']; ?></td>
-                                <td><?= $spsb['nama']; ?></td>
-                                <td><?= $spsb['alamat']; ?></td>
-                                <td><?= $spsb['no_pencatatan']; ?></td>
-                                <td><?= $spsb['federasi_nama']; ?></td>
-                                <td><?= $spsb['konfederasi_nama']; ?></td>
-                                <td class="text-center"><?= $spsb['jumlah_anggota']; ?></td>
-                                <td><?= $spsb['keterangan']; ?></td>
+                                <td class="text-center align-middle"><?= $spsb['provinsi_nama']; ?></td>
+                                <td class="text-center align-middle"><?= $spsb['kota_nama']; ?></td>
+                                <td class="text-center align-middle"><?= $spsb['nama']; ?></td>
+                                <td class="text-center align-middle"><?= $spsb['alamat']; ?></td>
+                                <td class="text-center align-middle"><?= $spsb['no_pencatatan']; ?></td>
+                                <td class="text-center align-middle"><?= $spsb['federasi_nama']; ?></td>
+                                <td class="text-center align-middle"><?= $spsb['konfederasi_nama']; ?></td>
+                                <td class="text-center align-middle"><?= $spsb['jumlah_anggota']; ?></td>
+                                <td class="text-center align-middle"><?= $spsb['keterangan']; ?></td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>
