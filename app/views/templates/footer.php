@@ -22,7 +22,6 @@
     <script src="<?= BASEURL ?>/lib/tempusdominus/js/moment.min.js"></script>
     <script src="<?= BASEURL ?>/lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="<?= BASEURL ?>/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script src="<?= BASEURL ?>/lib/fpdf/fpdf.php"></script>
 
     <script src="<?= BASEURL ?>/js/main.js"></script>
     <script src="<?= BASEURL ?>/js/datatables.js"></script>
