@@ -1,7 +1,7 @@
 <?php
 
 class FederationLeader extends Controller {
-    public function FederationLeader($id) {
+    public function details($id) {
         $data['judul'] = 'Daftar Pimpinan Federasi';
         $data['fed_leader'] = $this->model('FederationLeaderModel')->getFederationLeaderById($id);
         $data['federasi_id'] = $id;
@@ -13,17 +13,17 @@ class FederationLeader extends Controller {
     public function addFederationLeader() {
         if (empty($_POST['nama'])) {
             Flasher::setFlash('Nama wajib diisi!', 'Harap isi terlebih dahulu!', 'danger');
-            header('Location: ' . BASEURL . '/FederationLeader/FederationLeader/');
+            header('Location: ' . BASEURL . '/FederationLeader/details/');
             exit;
         }
 
         if( $this->model('FederationLeaderModel')->addDataFederationLeader($_POST) > 0) {
             Flasher::setFlash('berhasil', 'ditambahkan', 'success');
-            header('Location: ' . BASEURL . '/FederationLeader/FederationLeader/' . $_POST['federasi_id']);
+            header('Location: ' . BASEURL . '/FederationLeader/details/' . $_POST['federasi_id']);
             exit;
         } else {
             Flasher::setFlash('gagal', 'ditambahkan', 'danger');
-            header('Location: ' . BASEURL . '/FederationLeader/FederationLeader/' . $_POST['federasi_id']);
+            header('Location: ' . BASEURL . '/FederationLeader/details/' . $_POST['federasi_id']);
             exit;
         }
     }
@@ -31,11 +31,11 @@ class FederationLeader extends Controller {
     public function deleteFederationLeader($id) {
         if( $this->model('FederationLeaderModel')->deleteDataFederationLeader($id) > 0) {
             Flasher::setFlash('berhasil', 'dihapus', 'success');
-            header('Location: ' . BASEURL . '/FederationLeader/FederationLeader/' . $id);
+            header('Location: ' . BASEURL . '/FederationLeader/details/' . $id);
             exit;
         } else {
             Flasher::setFlash('gagal', 'dihapus', 'danger');
-            header('Location: ' . BASEURL . '/FederationLeader/FederationLeader/' . $id);
+            header('Location: ' . BASEURL . '/FederationLeader/details/' . $id);
             exit;
         }
     }
@@ -49,11 +49,11 @@ class FederationLeader extends Controller {
     public function editFederationLeader() {
         if( $this->model('FederationLeaderModel')->editDataFederationLeader($_POST) > 0) {
             Flasher::setFlash('berhasil', 'diubah', 'success');
-            header('Location: ' . BASEURL . '/FederationLeader/FederationLeader/' . $_POST['federasi_id']);
+            header('Location: ' . BASEURL . '/FederationLeader/details/' . $_POST['federasi_id']);
             exit;
         } else {
             Flasher::setFlash('gagal', 'diubah', 'danger');
-            header('Location: ' . BASEURL . '/FederationLeader/FederationLeader/' . $_POST['federasi_id']);
+            header('Location: ' . BASEURL . '/FederationLeader/details/' . $_POST['federasi_id']);
             exit;
         }
     }

@@ -1,7 +1,7 @@
 <?php
 
 class ConfederationLeader extends Controller {
-    public function ConfederationLeader($id) {
+    public function details($id) {
         $data['judul'] = 'Daftar Pimpinan Konfederasi';
         $data['confed_leader'] = $this->model('ConfederationLeaderModel')->getConfederationLeaderById($id);
         $data['konfederasi_id'] = $id;
@@ -13,17 +13,17 @@ class ConfederationLeader extends Controller {
     public function addConfederationLeader() {
         if (empty($_POST['nama'])) {
             Flasher::setFlash('Nama wajib diisi!', 'Harap isi terlebih dahulu!', 'danger');
-            header('Location: ' . BASEURL . '/ConfederationLeader/ConfederationLeader/');
+            header('Location: ' . BASEURL . '/ConfederationLeader/details/');
             exit;
         }
 
         if( $this->model('ConfederationLeaderModel')->addDataConfederationLeader($_POST) > 0) {
             Flasher::setFlash('berhasil', 'ditambahkan', 'success');
-            header('Location: ' . BASEURL . '/ConfederationLeader/ConfederationLeader/' . $_POST['konfederasi_id']);
+            header('Location: ' . BASEURL . '/ConfederationLeader/details/' . $_POST['konfederasi_id']);
             exit;
         } else {
             Flasher::setFlash('gagal', 'ditambahkan', 'danger');
-            header('Location: ' . BASEURL . '/ConfederationLeader/ConfederationLeader/' . $_POST['konfederasi_id']);
+            header('Location: ' . BASEURL . '/ConfederationLeader/details/' . $_POST['konfederasi_id']);
             exit;
         }
     }
@@ -31,11 +31,11 @@ class ConfederationLeader extends Controller {
     public function deleteConfederationLeader($id) {
         if( $this->model('ConfederationLeaderModel')->deleteDataConfederationLeader($id) > 0) {
             Flasher::setFlash('berhasil', 'dihapus', 'success');
-            header('Location: ' . BASEURL . '/ConfederationLeader/ConfederationLeader/' . $id);
+            header('Location: ' . BASEURL . '/ConfederationLeader/details/' . $id);
             exit;
         } else {
             Flasher::setFlash('gagal', 'dihapus', 'danger');
-            header('Location: ' . BASEURL . '/ConfederationLeader/ConfederationLeader/' . $id);
+            header('Location: ' . BASEURL . '/ConfederationLeader/details/' . $id);
             exit;
         }
     }
@@ -48,11 +48,11 @@ class ConfederationLeader extends Controller {
     public function editConfederationLeader() {
         if( $this->model('ConfederationLeaderModel')->editDataConfederationLeader($_POST) > 0) {
             Flasher::setFlash('berhasil', 'diubah', 'success');
-            header('Location: ' . BASEURL . '/ConfederationLeader/ConfederationLeader/' . $_POST['konfederasi_id']); // Mengarahkan ke ID yang benar
+            header('Location: ' . BASEURL . '/ConfederationLeader/details/' . $_POST['konfederasi_id']); // Mengarahkan ke ID yang benar
             exit;
         } else {
             Flasher::setFlash('gagal', 'diubah', 'danger');
-            header('Location: ' . BASEURL . '/ConfederationLeader/ConfederationLeader/' . $_POST['konfederasi_id']); // Mengarahkan ke ID yang benar
+            header('Location: ' . BASEURL . '/ConfederationLeader/details/' . $_POST['konfederasi_id']); // Mengarahkan ke ID yang benar
             exit;
         }
     }

@@ -37,7 +37,7 @@
                                 <td class="text-center align-middle"><?= $confed['alamat']; ?></td>
                                 <td class="text-center align-middle"><?= $confed['no_pencatatan']; ?></td>
                                 <td class="text-center align-middle"><?= $confed['total_anggota']; ?></td>
-                                <td class="text-center align-middle"><a href="<?= BASEURL; ?>/ConfederationLeader/ConfederationLeader/<?= $confed['id']; ?>" class="btn btn-outline-secondary btn-sm">Detail</a></td>
+                                <td class="text-center align-middle"><a href="<?= BASEURL; ?>/ConfederationLeader/details/<?= $confed['id']; ?>" class="btn btn-outline-secondary btn-sm">Detail</a></td>
                                 <td class="text-center align-middle"><?= $confed['keterangan']; ?></td>
                                 <td class="text-center align-middle"><a href="<?= BASEURL; ?>/Confederation/editConfederation/<?= $confed['id']; ?>" class="link-secondary showEditModal confederation" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $confed['id'] ?>"><i class="fa-solid fa-pen-to-square fs-3"></i></a></td>
                                 <td class="text-center align-middle"><a href="<?= BASEURL; ?>/Confederation/deleteConfederation/<?= $confed['id']; ?>" class="link-danger" onclick="return confirm('Apakah anda yakin ingin menghapus konfederasi? Konfederasi mungkin masih memiliki afiliasi.');"><i class="fa-solid fa-trash fs-3"></i></a></td>
