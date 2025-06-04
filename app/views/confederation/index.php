@@ -5,7 +5,6 @@
                 <div class="row">
                         <div class="col-sm-12 d-flex justify-content-between align-items-center">
                             <h4 class="mb-4">Daftar Konfederasi</h4>
-                            <a href="<?= BASEURL; ?>/Confederation/generateCsv" class="btn btn-secondary"><i class="fa-solid fa-file-csv"></i> CSV</a>
                         </div>
                     </div>
                 <div class="table-responsive">
@@ -23,6 +22,7 @@
                                 <th class="text-center align-middle">Alamat</th>
                                 <th class="text-center align-middle">No. Pencatatan</th>
                                 <th class="text-center align-middle">Jumlah Anggota</th>
+                                <th class="text-center align-middle">Afiliasi</th>
                                 <th class="text-center align-middle">Pimpinan</th>
                                 <th class="text-center align-middle">Keterangan</th>
                                 <th class="text-center align-middle" colspan="2">Aksi</th>
@@ -37,6 +37,7 @@
                                 <td class="text-center align-middle"><?= $confed['alamat']; ?></td>
                                 <td class="text-center align-middle"><?= $confed['no_pencatatan']; ?></td>
                                 <td class="text-center align-middle"><?= $confed['total_anggota']; ?></td>
+                                <td class="text-center align-middle"><a href="<?= BASEURL; ?>/ConfederationAffiliate/details/<?= $confed['id']; ?>" class="btn btn-outline-secondary btn-sm">Detail</a></td>
                                 <td class="text-center align-middle"><a href="<?= BASEURL; ?>/ConfederationLeader/details/<?= $confed['id']; ?>" class="btn btn-outline-secondary btn-sm">Detail</a></td>
                                 <td class="text-center align-middle"><?= $confed['keterangan']; ?></td>
                                 <td class="text-center align-middle"><a href="<?= BASEURL; ?>/Confederation/editConfederation/<?= $confed['id']; ?>" class="link-secondary showEditModal confederation" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $confed['id'] ?>"><i class="fa-solid fa-pen-to-square fs-3"></i></a></td>
