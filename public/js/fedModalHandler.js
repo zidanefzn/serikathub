@@ -7,7 +7,7 @@ $(function() {
         $('#nama, #alamat, #no_pencatatan, #konfederasi_id, #keterangan, #kota_id').val('');
     });
 
-    $('.showEditModal.federation').on('click', function() {
+    $('#example').on('click', '.showEditModal.federation', function() {
         $('#modalTitle').html('Edit Data');
         $('.modal-footer button[type=submit]').html('Edit Data');
         $('.modal-body form').attr('action', 'http://localhost/serikathub/public/Federation/editFederation');
@@ -39,7 +39,7 @@ $(function() {
         $('#nama, #jabatan, #no_telp').val('');
     });
 
-    $('.showEditModal.fed-leader').on('click', function() {
+    $('#example').on('click', '.showEditModal.fed-leader', function() {
         $('#modalTitle').html('Edit Data');
         $('.modal-footer button[type=submit]').html('Edit Data');
         $('.modal-body form').attr('action', 'http://localhost/serikathub/public/FederationLeader/editFederationLeader');

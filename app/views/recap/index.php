@@ -5,17 +5,6 @@
                 <div class="row">
                     <div class="col-sm-12 d-flex justify-content-between">
                         <h4 class="mb-4">Rekapitulasi SP/SB</h4>
-                        <div class="dropdown" id="csv-dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa-solid fa-file-csv"></i> CSV
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="<?= BASEURL; ?>/Recap/generateCsv">Nasional</a></li>
-                                <?php foreach ($data['province'] as $province) : ?>
-                                    <li><a class="dropdown-item" href="<?= BASEURL; ?>/Recap/generateCsvProvinsi/<?= $province['id']; ?>"><?= $province['nama']; ?></a></li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <div class="table-responsive">

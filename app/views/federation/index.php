@@ -5,7 +5,6 @@
                 <div class="row">
                         <div class="col-sm-12 d-flex justify-content-between align-items-center">
                             <h4 class="mb-4">Daftar Federasi</h4>
-                            <a href="<?= BASEURL; ?>/Federation/generateCsv" class="btn btn-secondary"><i class="fa-solid fa-file-csv"></i> CSV</a>
                         </div>
                     </div>
                 <div class="table-responsive">

@@ -7,7 +7,7 @@ $(function() {
         $('#nama, #alamat, #no_pencatatan, #federasi_id, #konfederasi_id, #jumlah_anggota #keterangan, #kota_id').val('');
     });
 
-    $('.showEditModal.spsb').on('click', function() {
+    $('#example').on('click', '.showEditModal.spsb', function() {
         $('#modalTitle').html('Edit Data');
         $('.modal-footer button[type=submit]').html('Edit Data');
         $('.modal-body form').attr('action', 'http://localhost/serikathub/public/Spsb/editSpsb');
@@ -41,7 +41,7 @@ $(function() {
         $('#nama, #jabatan, #no_telp').val('');
     });
 
-    $('.showEditModal.spsb-leader').on('click', function() {
+    $('#example').on('click', '.showEditModal.spsb-leader', function() {
         $('#modalTitle').html('Edit Data');
         $('.modal-footer button[type=submit]').html('Edit Data');
         $('.modal-body form').attr('action', 'http://localhost/serikathub/public/SpsbLeader/editSpsbLeader');
