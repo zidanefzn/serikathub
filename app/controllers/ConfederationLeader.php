@@ -57,27 +57,4 @@ class ConfederationLeader extends Controller {
         }
     }
 
-    public function generateCsv($id) {
-        $data['confed_leader'] = $this->model('ConfederationLeaderModel')->getConfederationLeaderById($id);
-
-        header('Content-Type: text/csv');
-        header('Content-Disposition: attachment; filename="daftar_pimpinan_konfederasi.csv"');
-
-        $output = fopen('php://output', 'w');
-
-        fputcsv($output, ['No', 'Nama', 'Jabatan', 'No. Telp']);
-
-        $no = 1;
-        foreach ($data['confed_leader'] as $confedLeader) {
-            fputcsv($output, [
-                $no++, 
-                $confedLeader['pk_nama'],
-                $confedLeader['pk_jabatan'],
-                $confedLeader['pk_no_telp']
-            ]);
-        }
-
-        fclose($output);
-        exit;
-    }
 }

@@ -58,32 +58,4 @@ class Spsb extends Controller {
         }
     }
 
-    public function generateCsv() {
-        $data['spsb'] = $this->model('SpsbModel')->getAllSpsb();
-
-        header('Content-Type: text/csv');
-        header('Content-Disposition: attachment; filename="daftar_spsb.csv"');
-
-        $output = fopen('php://output', 'w');
-
-        fputcsv($output, ['No', 'SP/SB', 'Alamat', 'No. Pencatatan', 'Afiliasi', '', 'Jumlah Anggota', 'Keterangan']);
-        fputcsv($output, ['', '', '', '', 'Federasi (F)', 'Konfederasi (K)', '', '']);
-
-        $no = 1;
-        foreach ($data['spsb'] as $spsb) {
-            fputcsv($output, [
-                $no++, 
-                $spsb['nama'], 
-                $spsb['alamat'], 
-                $spsb['no_pencatatan'], 
-                $spsb['federasi_nama'],
-                $spsb['konfederasi_nama'],
-                $spsb['jumlah_anggota'], 
-                $spsb['keterangan']
-            ]);
-        }
-
-        fclose($output);
-        exit;
-    }
 }

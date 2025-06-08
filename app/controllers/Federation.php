@@ -59,29 +59,4 @@ class Federation extends Controller {
         }
     }
 
-    public function generateCsv() {
-        $data['fed'] = $this->model('FederationModel')->getAllFederation();
-
-        header('Content-Type: text/csv');
-        header('Content-Disposition: attachment; filename="daftar_federasi.csv"');
-
-        $output = fopen('php://output', 'w');
-
-        fputcsv($output, ['No', 'Federasi', 'Alamat', 'No. Pencatatan', 'Jumlah Anggota', 'Keterangan']);
-
-        $no = 1;
-        foreach ($data['fed'] as $fed) {
-            fputcsv($output, [
-                $no++, 
-                $fed['nama'], 
-                $fed['alamat'], 
-                $fed['no_pencatatan'], 
-                $fed['total_anggota'], 
-                $fed['keterangan']
-            ]);
-        }
-
-        fclose($output);
-        exit;
-    }
 }

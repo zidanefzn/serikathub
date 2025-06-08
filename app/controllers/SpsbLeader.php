@@ -58,27 +58,4 @@ class SpsbLeader extends Controller {
         }
     }
 
-    public function generateCsv($id) {
-        $data['spsb_leader'] = $this->model('SpsbLeaderModel')->getSpsbLeaderById($id);
-
-        header('Content-Type: text/csv');
-        header('Content-Disposition: attachment; filename="daftar_pimpinan_spsb.csv"');
-
-        $output = fopen('php://output', 'w');
-
-        fputcsv($output, ['No', 'Nama', 'Jabatan', 'No. Telp']);
-
-        $no = 1;
-        foreach ($data['spsb_leader'] as $SpsbLeader) {
-            fputcsv($output, [
-                $no++, 
-                $SpsbLeader['pf_nama'],
-                $SpsbLeader['pf_jabatan'],
-                $SpsbLeader['pf_no_telp']
-            ]);
-        }
-
-        fclose($output);
-        exit;
-    }
 }

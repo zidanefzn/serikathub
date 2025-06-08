@@ -58,27 +58,4 @@ class FederationLeader extends Controller {
         }
     }
 
-    public function generateCsv($id) {
-        $data['fed_leader'] = $this->model('FederationLeaderModel')->getFederationLeaderById($id);
-
-        header('Content-Type: text/csv');
-        header('Content-Disposition: attachment; filename="daftar_pimpinan_federasi.csv"');
-
-        $output = fopen('php://output', 'w');
-
-        fputcsv($output, ['No', 'Nama', 'Jabatan', 'No. Telp']);
-
-        $no = 1;
-        foreach ($data['fed_leader'] as $fedLeader) {
-            fputcsv($output, [
-                $no++, 
-                $fedLeader['pf_nama'],
-                $fedLeader['pf_jabatan'],
-                $fedLeader['pf_no_telp']
-            ]);
-        }
-
-        fclose($output);
-        exit;
-    }
 }

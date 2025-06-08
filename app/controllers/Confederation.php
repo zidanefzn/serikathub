@@ -58,29 +58,4 @@ class Confederation extends Controller {
         }
     }
 
-    public function generateCsv() {
-        $data['confed'] = $this->model('ConfederationModel')->getAllConfederation();
-
-        header('Content-Type: text/csv');
-        header('Content-Disposition: attachment; filename="daftar_konfederasi.csv"');
-
-        $output = fopen('php://output', 'w');
-
-        fputcsv($output, ['No', 'Konfederasi', 'Alamat', 'No. Pencatatan', 'Jumlah Anggota', 'Keterangan']);
-
-        $no = 1;
-        foreach ($data['confed'] as $confed) {
-            fputcsv($output, [
-                $no++, 
-                $confed['nama'], 
-                $confed['alamat'], 
-                $confed['no_pencatatan'], 
-                $confed['total_anggota'], 
-                $confed['keterangan']
-            ]);
-        }
-
-        fclose($output);
-        exit;
-    }
 }
