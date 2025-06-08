@@ -4,7 +4,7 @@ $(function() {
         $('#modalTitle').html('Tambah Data');
         $('.modal-footer button[type=submit]').html('Tambah Data');
         $('.modal-body form').attr('action', 'http://localhost/serikathub/public/Spsb/addSpsb');
-        $('#nama, #alamat, #no_pencatatan, #Spsberasi_id, #konSpsberasi_id, #jumlah_anggota #keterangan, #kota_id').val('');
+        $('#nama, #alamat, #no_pencatatan, #federasi_id, #konfederasi_id, #jumlah_anggota #keterangan, #kota_id').val('');
     });
 
     $('#example').on('click', '.showEditModal.spsb', function() {
@@ -22,9 +22,9 @@ $(function() {
             success: function(data) {
                 $('#nama').val(data.nama);
                 $('#alamat').val(data.alamat);
-                $('#no_pencatatan').val(data.no_pencatatan);
-                $('#Spsberasi_id').val(data.Spsberasi_id);
-                $('#konSpsberasi_id').val(data.konSpsberasi_id);
+                $('#no_pencatatan').val(data.no_pencatatan);    
+                $('#federasi_id').val(data.federasi_id);
+                $('#konfederasi_id').val(data.konfederasi_id);
                 $('#jumlah_anggota').val(data.jumlah_anggota);
                 $('#keterangan').val(data.keterangan);
                 $('#kota_id').val(data.kota_id);
