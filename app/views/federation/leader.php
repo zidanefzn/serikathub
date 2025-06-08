@@ -32,8 +32,8 @@
                                 <td class="text-center align-middle"><?= $fedLeader['pf_nama']; ?></td>
                                 <td class="text-center align-middle"><?= $fedLeader['pf_jabatan']; ?></td>
                                 <td class="text-center align-middle"><?= $fedLeader['pf_no_telp']; ?></td>
-                                <td class="text-center align-middle"><a href="<?= BASEURL; ?>/FederationLeader/editFederationLeader/<?= $fedLeader['pf_id']; ?>" class="link-secondary showEditModal fed-leader" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $fedLeader['pf_id'] ?>"><i class="fa-solid fa-pen-to-square fs-3"></i></a></td>
-                                <td class="text-center align-middle"><a href="<?= BASEURL; ?>/FederationLeader/deleteFederationLeader/<?= $fedLeader['pf_id']; ?>" class="link-danger" onclick="return confirm('Apakah anda yakin ingin menghapus pimpinan federasi?');"><i class="fa-solid fa-trash fs-3"></i></a></td>
+                                <td class="text-center align-middle"><a href="" class="link-secondary showEditModal fed-leader" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $fedLeader['pf_id'] ?>"><i class="fa-solid fa-pen-to-square fs-3"></i></a></td>
+                                <td class="text-center align-middle"><a href="" class="link-danger" data-bs-toggle="modal" data-bs-target="#deleteFedLeadModal" data-id="<?= $fedLeader['pf_id'] ?>"><i class="fa-solid fa-trash fs-3"></i></a></td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -49,7 +49,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="<?= BASEURL; ?>/FederationLeader/addFederationLeader" method="post">
+                                    <form action="" method="post">
                                         <input type="hidden" id="federasi_id" name="federasi_id" value="<?= $data['federasi_id']; ?>">
                                         <input type="hidden" id="id" name="id">
                                         <div class="form-group mb-4">
@@ -69,6 +69,25 @@
                                             <button type="submit" class="btn btn-primary">Tambah</button>
                                         </div>
                                     </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="deleteFedLeadModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalLabel">Hapus Pimpinan Federasi</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Apakah anda yakin ingin menghapus pimpinan federasi?
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                    <a href="" id="deleteFedLeadBtn" class="btn btn-danger">Hapus</a>
                                 </div>
                             </div>
                         </div>

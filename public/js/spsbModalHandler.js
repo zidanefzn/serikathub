@@ -4,7 +4,7 @@ $(function() {
         $('#modalTitle').html('Tambah Data');
         $('.modal-footer button[type=submit]').html('Tambah Data');
         $('.modal-body form').attr('action', 'http://localhost/serikathub/public/Spsb/addSpsb');
-        $('#nama, #alamat, #no_pencatatan, #federasi_id, #konfederasi_id, #jumlah_anggota #keterangan, #kota_id').val('');
+        $('#nama, #alamat, #no_pencatatan, #Spsberasi_id, #konSpsberasi_id, #jumlah_anggota #keterangan, #kota_id').val('');
     });
 
     $('#example').on('click', '.showEditModal.spsb', function() {
@@ -23,8 +23,8 @@ $(function() {
                 $('#nama').val(data.nama);
                 $('#alamat').val(data.alamat);
                 $('#no_pencatatan').val(data.no_pencatatan);
-                $('#federasi_id').val(data.federasi_id);
-                $('#konfederasi_id').val(data.konfederasi_id);
+                $('#Spsberasi_id').val(data.Spsberasi_id);
+                $('#konSpsberasi_id').val(data.konSpsberasi_id);
                 $('#jumlah_anggota').val(data.jumlah_anggota);
                 $('#keterangan').val(data.keterangan);
                 $('#kota_id').val(data.kota_id);
@@ -64,4 +64,30 @@ $(function() {
             }
         });
     });
+
+    // Spsb Delete Handler
+    const deleteSpsbModal = document.getElementById('deleteSpsbModal');
+    const deleteSpsbBtn = document.getElementById('deleteSpsbBtn');
+
+    if (deleteSpsbModal) {
+        deleteSpsbModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const id = button.getAttribute('data-id');
+            const baseurl = 'http://localhost/serikathub/public';
+            deleteSpsbBtn.href = baseurl + '/Spsb/deleteSpsb/' + id;
+        });
+    }
+
+    // SpsbLeader Delete Handler
+    const deleteSpsbLeadModal = document.getElementById('deleteSpsbLeadModal');
+    const deleteSpsbLeadBtn = document.getElementById('deleteSpsbLeadBtn');
+
+    if (deleteSpsbLeadModal) {
+        deleteSpsbLeadModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const id = button.getAttribute('data-id');
+            const baseurl = 'http://localhost/serikathub/public';
+            deleteSpsbLeadBtn.href = baseurl + '/SpsbLeader/deleteSpsbLeader/' + id;
+        });
+    }
 });

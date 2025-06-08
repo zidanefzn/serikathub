@@ -40,10 +40,10 @@
                                 <td class="text-center align-middle"><a href="<?= BASEURL; ?>/ConfederationAffiliate/details/<?= $confed['id']; ?>" class="btn btn-outline-secondary btn-sm">Detail</a></td>
                                 <td class="text-center align-middle"><a href="<?= BASEURL; ?>/ConfederationLeader/details/<?= $confed['id']; ?>" class="btn btn-outline-secondary btn-sm">Detail</a></td>
                                 <td class="text-center align-middle"><?= $confed['keterangan']; ?></td>
-                                <td class="text-center align-middle"><a href="<?= BASEURL; ?>/Confederation/editConfederation/<?= $confed['id']; ?>" class="link-secondary showEditModal confederation" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $confed['id'] ?>"><i class="fa-solid fa-pen-to-square fs-3"></i></a></td>
-                                <td class="text-center align-middle"><a href="<?= BASEURL; ?>/Confederation/deleteConfederation/<?= $confed['id']; ?>" class="link-danger" onclick="return confirm('Apakah anda yakin ingin menghapus konfederasi? Konfederasi mungkin masih memiliki afiliasi.');"><i class="fa-solid fa-trash fs-3"></i></a></td>
+                                <td class="text-center align-middle"><a href="" class="link-secondary showEditModal confederation" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $confed['id'] ?>"><i class="fa-solid fa-pen-to-square fs-3"></i></a></td>
+                                <td class="text-center align-middle"><a href="" class="link-danger" data-bs-toggle="modal" data-bs-target="#deleteConfedModal" data-id="<?= $confed['id'] ?>"><i class="fa-solid fa-trash fs-3"></i></a></td>
                             </tr>
-                            <?php endforeach; ?>
+                            <?php endforeach; ?>    
                         </tbody>
                     </table>
 
@@ -57,7 +57,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="<?= BASEURL; ?>/Confederation/addConfederation" method="post">
+                                    <form action="" method="post">
                                         <input type="hidden" id="id" name="id">
                                         <div class="form-group mb-4">
                                             <label for="nama" class="mb-1">Nama *</label>
@@ -92,6 +92,25 @@
                                             <button type="submit" class="btn btn-primary">Tambah</button>
                                         </div>
                                     </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="deleteConfedModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalLabel">Hapus Konfederasi</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Apakah anda yakin ingin menghapus konfederasi? Konfederasi mungkin masih memiliki afiliasi.
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                    <a href="" id="deleteConfedBtn" class="btn btn-danger">Hapus</a>
                                 </div>
                             </div>
                         </div>

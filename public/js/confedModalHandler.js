@@ -61,4 +61,43 @@ $(function() {
             }
         });
     });
+
+    // Confederation Delete Handler
+    const deleteConfedModal = document.getElementById('deleteConfedModal');
+    const deleteConfedBtn = document.getElementById('deleteConfedBtn');
+
+    if (deleteConfedModal) {
+        deleteConfedModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const id = button.getAttribute('data-id');
+            const baseurl = 'http://localhost/serikathub/public';
+            deleteConfedBtn.href = baseurl + '/Confederation/deleteConfederation/' + id;
+        });
+    }
+
+    // ConfederationLeader Delete Handler
+    const deleteConfedLeadModal = document.getElementById('deleteConfedLeadModal');
+    const deleteConfedLeadBtn = document.getElementById('deleteConfedLeadBtn');
+
+    if (deleteConfedLeadModal) {
+        deleteConfedLeadModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const id = button.getAttribute('data-id');
+            const baseurl = 'http://localhost/serikathub/public';
+            deleteConfedLeadBtn.href = baseurl + '/ConfederationLeader/deleteConfederationLeader/' + id;
+        });
+    }
+
+    // ConfederationAffiliate Delete Handler
+    const deleteConfedAffModal = document.getElementById('deleteConfedAffModal');
+    const deleteConfedAffBtn = document.getElementById('deleteConfedAffBtn');
+
+    if (deleteConfedAffModal) {
+        deleteConfedAffModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const id = button.getAttribute('data-id');
+            const baseurl = 'http://localhost/serikathub/public';
+            deleteConfedAffBtn.href = baseurl + '/ConfederationAffiliate/deleteConfederationAffiliate/' + id;
+        });
+    }
 });

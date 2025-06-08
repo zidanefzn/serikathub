@@ -62,4 +62,30 @@ $(function() {
             }
         });
     });
+
+    // Federation Delete Handler
+    const deleteFedModal = document.getElementById('deleteFedModal');
+    const deleteFedBtn = document.getElementById('deleteFedBtn');
+
+    if (deleteFedModal) {
+        deleteFedModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const id = button.getAttribute('data-id');
+            const baseurl = 'http://localhost/serikathub/public';
+            deleteFedBtn.href = baseurl + '/Federation/deleteFederation/' + id;
+        });
+    }
+
+    // FederationLeader Delete Handler
+    const deleteFedLeadModal = document.getElementById('deleteFedLeadModal');
+    const deleteFedLeadBtn = document.getElementById('deleteFedLeadBtn');
+
+    if (deleteFedLeadModal) {
+        deleteFedLeadModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const id = button.getAttribute('data-id');
+            const baseurl = 'http://localhost/serikathub/public';
+            deleteFedLeadBtn.href = baseurl + '/FederationLeader/deleteFederationLeader/' + id;
+        });
+    }
 });

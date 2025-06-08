@@ -32,8 +32,8 @@
                                 <td class="text-center align-middle"><?= $SpsbLeader['ps_nama']; ?></td>
                                 <td class="text-center align-middle"><?= $SpsbLeader['ps_jabatan']; ?></td>
                                 <td class="text-center align-middle"><?= $SpsbLeader['ps_no_telp']; ?></td>
-                                <td class="text-center align-middle"><a href="<?= BASEURL; ?>/SpsbLeader/editSpsbLeader/<?= $SpsbLeader['ps_id']; ?>" class="link-secondary showEditModal spsb-leader" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $SpsbLeader['ps_id'] ?>"><i class="fa-solid fa-pen-to-square fs-3"></i></a></td>
-                                <td class="text-center align-middle"><a href="<?= BASEURL; ?>/SpsbLeader/deleteSpsbLeader/<?= $SpsbLeader['ps_id']; ?>" class="link-danger"><i class="fa-solid fa-trash fs-3" onclick="return confirm('Apakah anda yakin ingin menghapus pimpinan SP/SB?');"></i></a></td>
+                                <td class="text-center align-middle"><a href="" class="link-secondary showEditModal spsb-leader" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $SpsbLeader['ps_id'] ?>"><i class="fa-solid fa-pen-to-square fs-3"></i></a></td>
+                                <td class="text-center align-middle"><a href="" class="link-danger" data-bs-toggle="modal" data-bs-target="#deleteSpsbLeadModal" data-id="<?= $SpsbLeader['ps_id'] ?>"><i class="fa-solid fa-trash fs-3"></i></a></td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -49,7 +49,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="<?= BASEURL; ?>/SpsbLeader/addSpsbLeader" method="post">
+                                    <form action="" method="post">
                                         <input type="hidden" id="spsb_id" name="spsb_id" value="<?= $data['spsb_id']; ?>">
                                         <input type="hidden" id="id" name="id">
                                         <div class="form-group mb-4">
@@ -69,6 +69,25 @@
                                             <button type="submit" class="btn btn-primary">Tambah</button>
                                         </div>
                                     </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="deleteSpsbLeadModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalLabel">Hapus Pimpinan SP/SB</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Apakah anda yakin ingin menghapus pimpinan SP/SB?
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                    <a href="" id="deleteSpsbLeadBtn" class="btn btn-danger">Hapus</a>
                                 </div>
                             </div>
                         </div>
