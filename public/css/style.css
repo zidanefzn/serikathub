@@ -162,11 +162,6 @@
     transform: rotate(-180deg);
 }
 
-.dropdown-menu {
-    max-height: 200px !important;
-    overflow-y: scroll !important;
-}
-
 @media (min-width: 992px) {
     .sidebar {
         margin-left: 0;
