@@ -21,8 +21,8 @@
                                 <th class="text-center align-middle">Federasi</th>
                                 <th class="text-center align-middle">Alamat</th>
                                 <th class="text-center align-middle">No. Pencatatan</th>
-                                <th class="text-center align-middle">Keterangan</th>
                                 <th class="text-center align-middle">Jumlah Anggota</th>
+                                <th class="text-center align-middle">Keterangan</th>
                                 <th class="text-center align-middle">Aksi</th>
                             </tr>
                         </thead>
