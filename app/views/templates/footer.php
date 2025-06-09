@@ -38,9 +38,5 @@
     <script src="<?= BASEURL ?>/js/select2FedHandler.js"></script>
     <script src="<?= BASEURL ?>/js/select2CityHandler.js"></script>
 
-    <script>
-        
-    </script>
-
 </body>
 </html>
